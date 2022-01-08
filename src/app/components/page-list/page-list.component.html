@@ -1,0 +1,18 @@
+<table class="table table-striped mt-5" *ngIf='searchList.length'>
+    <thead>
+        <tr>
+            <th scope="col-3">Search</th>
+            <th style="width: 20%;" scope="col-3">Word count</th>
+            <th scope="col-6">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of searchList">
+            <td>
+              <a [href]="'https://en.wikipedia.org?curid='+ list.pageid" target="_blank" >{{list.title}}</a>  
+            </td>
+            <td>{{list.wordcount}}</td>
+            <td [innerHTML]='list.snippet'></td>
+        </tr>
+    </tbody>
+</table>
